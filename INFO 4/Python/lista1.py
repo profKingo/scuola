@@ -1,0 +1,12 @@
+lista=[2,4,7]
+print(lista)
+lista.append(9)
+print(lista)
+lista.insert(0,99)
+lista.insert(3,77)
+print(lista)
+lista.sort()
+print(lista)
+lista.reverse()
+print(lista)
+print(min(lista))

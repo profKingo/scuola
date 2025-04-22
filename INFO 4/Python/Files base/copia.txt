@@ -1,0 +1,4 @@
+Gino,Rossi,23
+Aldo,Bruni,21
+Lele,Rosa,19
+Pippo,Dipa,22

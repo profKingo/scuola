@@ -1,0 +1,8 @@
+Gino,Rossi,23
+Aldo,Bruni,21
+Bigio,Verdi,32
+Alex,Neri,40
+Lele,Rosa,19
+Pippo,Dipa,22
+Alex,DelPiero,46
+edoardo,fantozzi,18
