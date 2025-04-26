@@ -31,7 +31,7 @@ def consumer():
 
 #main
 scelta=-1
-while(scelta>0):
+while(scelta!=0):
   print("""1 produci
            2 consuma
            0 esci""")

@@ -25,11 +25,9 @@ def prendi_caramella():
 t1 = threading.Thread(target=prendi_caramella)
 t2 = threading.Thread(target=prendi_caramella)
 t3 = threading.Thread(target=prendi_caramella)
-
 t1.start()
 t2.start()
 t3.start()
-
 # Attendiamo che tutti i thread terminino l'esecuzione
 t1.join()
 t2.join()

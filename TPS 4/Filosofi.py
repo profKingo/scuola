@@ -1,10 +1,13 @@
 import threading
+from threading import Thread
 import time
+import random
 
 # Definiamo la classe Filosofo
-class Filosofo(threading.Thread):
+class Filosofo(Thread):
     def __init__(self, name, fork_on_left, fork_on_right):
-        self.name = name
+        Thread.__init__(self)
+        self.nome = name
         self.fork_on_left = fork_on_left
         self.fork_on_right = fork_on_right
         self.left_fork = None
@@ -13,10 +16,10 @@ class Filosofo(threading.Thread):
     # Metodo run per il thread del filosofo
     def run(self):
         while True:
-            print(f"{self.name} è affamato")
-            time.sleep(1)
+            time.sleep(random.randint(1,5))
+            print(f"{self.nome} è affamato")
             self.pick_up_forks()
-            time.sleep(1)
+            time.sleep(random.randint(1,3))
             self.put_down_forks()
 
     # Metodo per prendere le forchette
@@ -25,20 +28,19 @@ class Filosofo(threading.Thread):
         self.right_fork = self.fork_on_right
 
         if self.left_fork and self.right_fork:
-            print(f"{self.name} ha preso entrambe le forchette")
+            print(f"{self.nome} ha preso entrambe le forchette")
         else:
-            print(f"{self.name} non può prendere le forchette")
+            print(f"{self.nome} non può prendere le forchette")
 
     # Metodo per posare le forchette
     def put_down_forks(self):
         if self.left_fork and self.right_fork:
-            print(f"{self.name} ha posato entrambe le forchette")
+            print(f"{self.nome} ha posato entrambe le forchette")
             self.left_fork = None
             self.right_fork = None
 
-Pippo = Filosofo("Pippo", None, None)
 # Creiamo i filosofi e le forchette
-philosophers = ["Platon", "Aristotele", "Socrate", "Pitagora"]
+philosophers = ["Platone", "Aristotele", "Socrate", "Pitagora"]
 forks = [threading.Lock() for _ in range(4)]
 
 # Creiamo i thread per i filosofi
